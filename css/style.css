@@ -1,0 +1,70 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  .card {
+    width: 100px;
+    height: 140px;
+    border: 2px solid #333;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Front and back share the same positioning */
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Show back of card */
+  .card .front {
+    display: none;
+    background-color: rgb(85, 129, 143);
+  }
+  
+  .card .back {
+    background-image:url("/background.png");
+    background-size:150px;;
+  }
+  
+  /* When card is flipped */
+  .card.flipped .front {
+    display: block;
+  }
+  
+  .card.flipped .back {
+    display: none;
+  }
+  img{
+    width:50px;
+  }
+  .card .back img {
+    display: none;
+  }
+  
+  .card.flipped .back img {
+    display: block;
+  }
+  
