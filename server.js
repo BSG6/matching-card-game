@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const PORT = 8000
+const PORT = 8002
 
 app.use(cors())
 app.use(express.static(__dirname));
@@ -55,7 +55,8 @@ class Cards {
     }
 
 }
-
+//just finding out I didnt need to use a server what the fuuuuuuuuccccccckkkkkkkkk 
+//"probably wont make no money off this, oh well"
 
 app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html')
