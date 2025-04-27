@@ -19,7 +19,7 @@
   /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-  .card {
+  /* .card {
     width: 100px;
     height: 140px;
     border: 2px solid #333;
@@ -29,17 +29,17 @@
   }
   
   /* Front and back share the same positioning */
-  .card .front,
+  /* .card .front,
   .card .back {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-  }
+  } */
   
   /* Show back of card */
-  .card .front {
+  /* .card .front {
     display: none;
     background-color: rgb(85, 129, 143);
   }
@@ -48,16 +48,16 @@
     background-image:url("/background.png");
     background-size:150px;;
   }
-  
+   */
   /* When card is flipped */
-  .card.flipped .front {
+  /* .card.flipped .front {
     display: block;
   }
-  
+   */
   /* .card.flipped .back {
     display: none;
   } */
-  img{
+  /* img{
     width:50px;
   }
   .card .back img {
@@ -66,5 +66,58 @@
   
   .card.flipped .back img {
     display: block;
+  }
+   */ 
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .start {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 140px;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 8px;
+  }
+  
+  .front {
+    background: #333;
+  }
+  
+  .back {
+    background: white;
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .front {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(0deg);
   }
   
