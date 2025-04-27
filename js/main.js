@@ -2,61 +2,61 @@
 
 //10 cards with 5 matching pairs (Only need 5 icons)nahhh I want them to flip. Now to figure that out...
 //cards need to shuffle each time the game loads with reset button
-document.querySelector('.start').addEventListener('click', startGame)
-//function to check if cards match
+// document.querySelector('.start').addEventListener('click', startGame)
+// //function to check if cards match
 
 
-let flippedCards = []
+// let flippedCards = []
 
-    function startGame (){
-        console.log('button')
-        const url = `/api`
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    let cards = document.querySelectorAll('.card');   
-                    let shuffled = data.shuffledCards;
-                    console.log(data)
-                    //shuffling through each card
-                    for (let i = 0; i < cards.length; i++){
-                        let img = cards[i].querySelector('img')
-                         console.log(shuffled[i], cards[i]);
-                            img.src = shuffled[i].image
-                        }
-                             //flip card logic
-                            cards.forEach(function(card) {
-                            card.addEventListener('click', function () {
-                                card.style.backgroundImage = 'none'
-                                card.classList.add('flipped');
-                                    console.log(card)
+//     function startGame (){
+//         console.log('button')
+//         const url = `/api`
+//             fetch(url)
+//                 .then(res => res.json())
+//                 .then(data => {
+//                     let cards = document.querySelectorAll('.card');   
+//                     let shuffled = data.shuffledCards;
+//                     console.log(data)
+//                     //shuffling through each card
+//                     for (let i = 0; i < cards.length; i++){
+//                         let img = cards[i].querySelector('img')
+//                          console.log(shuffled[i], cards[i]);
+//                             img.src = shuffled[i].image
+//                         }
+//                              //flip card logic
+//                             cards.forEach(function(card) {
+//                             card.addEventListener('click', function () {
+//                                 card.style.backgroundImage = 'none'
+//                                 card.classList.add('flipped');
+//                                     console.log(card)
                                 
-                            });
-                            //figuring this out, took me out. just throw the whole computer away..... there has to be another way 
-                                matchMe(card)
-                    });
-                });
-                card.addEventListener('click',matchMe)
+//                             });
+//                             //figuring this out, took me out. just throw the whole computer away..... there has to be another way 
+//                                 matchMe(card)
+//                     });
+//                 });
+//                 card.addEventListener('click',matchMe)
                                     
 
 
-    };
+//     };
 
-function matchMe(card){
-    //add class to card once flipped
-    card.classList.add('flippedCard')
-    //push flipped card into array
-    flippedCards.push(card)
-    //conditional for cards that dont match
-        if (flippedCards.length === 2){
-            flippedCards[0].classList.remove('flipped')
-            flippedCards[1].classList.remove('flipped')
-            flippedCards = []
-        }
+// function matchMe(card){
+//     //add class to card once flipped
+//     card.classList.add('flippedCard')
+//     //push flipped card into array
+//     flippedCards.push(card)
+//     //conditional for cards that dont match
+//         if (flippedCards.length === 2){
+//             flippedCards[0].classList.remove('flipped')
+//             flippedCards[1].classList.remove('flipped')
+//             flippedCards = []
+//         }
     //
-        if (flippedCrads.length === 2){
+        // if (flippedCrads.length === 2){
 
-        }
-}
+        // }
+// }
 
     
 
